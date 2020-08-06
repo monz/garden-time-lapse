@@ -48,3 +48,11 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+
+## Additional Dependencies
+
+install electron and orca for plotly renderer, e.g. 'svg', 'png', ..., see https://github.com/plotly/orca and https://github.com/electron/electron/issues/11755
+
+- sudo npm install -g electron --unsafe-perm=true --allow-root
+- sudo npm install -g orca
