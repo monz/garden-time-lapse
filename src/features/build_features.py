@@ -11,7 +11,7 @@ def __get_exif_data(file_path, exif_tags):
     if img_exif is None:
         return
     else:
-        exif_data = {}
+        exif_data = {'file': file_path}
         for tag in exif_tags:
             exif_data.update({
                 tag: img_exif.get(exif_tags[tag])
