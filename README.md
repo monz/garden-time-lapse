@@ -1,7 +1,22 @@
 home-garde-time-lapse
 ==============================
 
-Image classification to classify usable images for time lapse video.
+Image classification to sort out images which are unsuitable for creating a time lapse video. In this example unsuitable images show  *closed shutters*, *reflections*, etc. Before creating a time lapse video, selected images must be cleaned, such that there are only reasonable images considered for video creation.
+
+## Notebooks Online Preview
+
+> **Note:** currently no binary data has been added to this repository. This might lead to problems displaying images in the Jupyter notebooks. Also, I used interactive plots using [Plotly Dash](https://plotly.com/dash/). The plots do not render in the online preview. As long as there is no data available these plot will not work for you. I want to integrate [DVC](https://dvc.org/) and provide you some example data, properly. For now, have fun reading the notebooks!
+
+1. [Project Context](https://nbviewer.jupyter.org/github/monz/garden-time-lapse/blob/master/notebooks/1.0-project-context.ipynb)
+
+1. [Exploratory Data Analysis](https://nbviewer.jupyter.org/github/monz/garden-time-lapse/blob/master/notebooks/1.0-exploratory-data-analysis.ipynb)
+
+1. [Model: Logistic Regression](https://nbviewer.jupyter.org/github/monz/garden-time-lapse/blob/master/notebooks/1.0-model-logistic-regression.ipynb)
+
+1. [Image Selection for Time-Lapse](https://nbviewer.jupyter.org/github/monz/garden-time-lapse/blob/master/notebooks/1.0-image-selection-noon.ipynb)
+
+1. [Create Time-Lapse Video](https://nbviewer.jupyter.org/github/monz/garden-time-lapse/blob/master/notebooks/1.0-time-lapse-at-noon.ipynb)
+
 
 Project Organization
 ------------
