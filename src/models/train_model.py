@@ -26,30 +26,12 @@ def train(X_train, y_train, model_path = None, persist = False):
     return clf
 
 
-def train_default(img_path, model_path = None):
-    exif_tags = {
-        'exposure_time': 0x829a,
-        # 'f_number': 0x829d,
-        'shutter_speed': 0x9201,
-        # 'aperture': 0x9202,
-        'brightness': 0x9203,
-        # 'focal_length': 0x920a,
-        'iso_speed': 0x8827
-    }
-
+def train_default(features_file, model_path = None, feature_cols = ['exposure_time', 'shutter_speed', 'brightness', 'iso_speed'], label ='label'):
     # load data
-    open_exif_data = build_features.get_exif_data(os.path.sep.join((img_path, "open")), exif_tags)
-    open_exif_data['label'] = 0  # set label column to '0', open
-
-    closed_exif_data = build_features.get_exif_data(os.path.sep.join((img_path, "closed")), exif_tags)
-    closed_exif_data['label'] = 1  # set label column to '1', closed
-
-    all_exif_data = pd.concat([open_exif_data, closed_exif_data], ignore_index = True)
-
+    all_features = pd.read_csv(features_file)
     # split dataset in features and target variable
-    feature_cols = ['exposure_time', 'shutter_speed', 'brightness', 'iso_speed']
-    X = all_exif_data[feature_cols]  # Features
-    y = all_exif_data.label  # Target variable
+    X = all_features[feature_cols]  # Features
+    y = all_features[label]  # Target variable
 
     # split X and y into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
@@ -59,7 +41,7 @@ def train_default(img_path, model_path = None):
 
 
 if __name__ == '__main__':
-    img_path = "../../data/interim"
+    features_file = "../../data/processed/training-features.txt"
     model_path = '../../models/{}_logreg-clr.joblib'.format(datetime.now().strftime("%Y%m%d-%H%M%S"))
 
-    train_default(img_path, model_path = model_path)
+    train_default(features_file, model_path = model_path)

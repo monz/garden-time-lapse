@@ -25,9 +25,10 @@ requirements: test_environment
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 
+# data: requirements # skip requirements creation for now
 ## Make Dataset
-data: requirements
-	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/processed
+data:
+	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw/ data/processed
 
 ## Delete all compiled Python files
 clean:
