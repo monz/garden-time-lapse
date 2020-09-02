@@ -5,7 +5,7 @@ Image classification to sort out images which are unsuitable for creating a time
 
 ## Notebooks Online Preview
 
-> **Note:** currently no binary data has been added to this repository. This might lead to problems displaying images in the Jupyter notebooks. Also, I used interactive plots using [Plotly Dash](https://plotly.com/dash/). The plots do not render in the online preview. As long as there is no data available these plots will not work for you. I want to integrate [DVC](https://dvc.org/) and provide you some example data, properly. For now, have fun reading the notebooks!
+> **Note:** I used interactive plots using [Plotly Dash](https://plotly.com/dash/). The plots do not render in the online preview. And as long as there is no data publicly available these plots will not work for you. Therefore, some plot previews have been added to the notebooks. I want to integrate [DVC](https://dvc.org/) and provide you some example data, properly. For now, have fun reading the notebooks!
 
 1. [Project Context](https://nbviewer.jupyter.org/github/monz/garden-time-lapse/blob/master/notebooks/1.0-project-context.ipynb)
 
